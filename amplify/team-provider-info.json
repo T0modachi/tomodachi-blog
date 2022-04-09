@@ -1,0 +1,23 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tomodachiblog-prod-220254-authRole",
+      "UnauthRoleArn": "arn:aws:iam::722849250499:role/amplify-tomodachiblog-prod-220254-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::722849250499:role/amplify-tomodachiblog-prod-220254-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tomodachiblog-prod-220254-deployment",
+      "UnauthRoleName": "amplify-tomodachiblog-prod-220254-unauthRole",
+      "StackName": "amplify-tomodachiblog-prod-220254",
+      "StackId": "arn:aws:cloudformation:us-east-1:722849250499:stack/amplify-tomodachiblog-prod-220254/d98ff9f0-b616-11ec-ad08-0a3c8f91aaab",
+      "AmplifyAppId": "ddwrd8iwtzj4v"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "ddwrd8iwtzj4v",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
