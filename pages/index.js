@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import Head from 'next/head'
 import Post from '../components/Post'
+import { sortByDate } from '../utils'
 
 export default function Home({ posts }) {
   return (
@@ -39,5 +40,5 @@ export async function getStaticProps() {
     }
   })
 
-  return { props: { posts } }
+  return { props: { posts: posts.sort(sortByDate) } }
 }
