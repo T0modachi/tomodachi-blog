@@ -9,7 +9,7 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>T0modachi's blog</title>
+        <title>T0modachi&apos;s blog</title>
         <meta name="description" content="Blog about software engineering" />
       </Head>
 
