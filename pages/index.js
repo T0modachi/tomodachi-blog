@@ -1,6 +1,10 @@
+import matter from 'gray-matter'
+import path from 'path'
+import fs from 'fs'
 import Head from 'next/head'
+import Post from '../components/Post'
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div>
       <Head>
@@ -8,8 +12,32 @@ export default function Home() {
         <meta name="description" content="Blog about software engineering" />
       </Head>
 
-      <h2> Hello</h2>
-
-     </div>
+      <div className='posts'>
+        {posts.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
+      </div>
+    </div>
   )
+}
+
+export async function getStaticProps() {
+
+  const files = fs.readdirSync(path.join('posts'))
+
+  const posts = files.map(filename => {
+
+    const slug = filename.replace('.md', '')
+
+    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+
+    const { data: frontmatter } = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
+  return { props: { posts } }
 }
